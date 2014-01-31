@@ -71,7 +71,9 @@ public class Words {
     }
 
     /**
-     *
+     * Remove the word from head. As we move the start we always remove the item from the head of the list.
+     * When the item is removed the corresponding counter is decreased. If the counter value becomes smaller than the
+     * expected counter value - the number of valid counters is decreased.
      */
     public void removeWord() {
         if (areaSize > 0) {
@@ -87,8 +89,8 @@ public class Words {
     }
 
     /**
-     *
-     * @return
+     * Check is the area is satisfying all the conditions - contains all the words in the quantities mentioned in resCounters
+     * @return true if the area is valid (the number of valid counters = number of counters)
      */
     public boolean isValid() {
         return (numberOfValidCounters == expCounters.length);
