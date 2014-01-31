@@ -6,7 +6,7 @@ import java.util.LinkedList;
  * Class contains the area of the document which is observed at the current moment.
  * This implementation keeps the area of the words in {@code area} and the status of the area (if it contains all
  * required words and these words appear in the area given number of times) is defined by {@code numberOfValidCounters}
- * - number of the counters which are equal to the given quontities.
+ * - number of the counters which are equal to the given quantities.
  *
  * <p>This implementation should support {@code addWord} and {@code removeWord} in time proportional to the O(1).
  * </p>
@@ -22,7 +22,7 @@ public class Words {
     private int areaSize; //size of the observed area
 
     /**
-     * Helper class - each element is the info we get for the word: id - the identificator of the word; location - the
+     * Helper class - each element is the info we get for the word: id - the identifier of the word; location - the
      * location of the word in the origin text
      */
     private static class Pair {
@@ -46,9 +46,7 @@ public class Words {
         numberOfValidCounters = 0;
         currentCounters = new int[wordsNum];
         expCounters = new int[wordsNum];
-        for (int i = 0; i < wordsNum; i++) {
-            expCounters[i] = counters[i];
-        }
+        System.arraycopy(counters, 0, expCounters, 0, wordsNum);
 
         area = new LinkedList<Pair>();
     }

@@ -11,7 +11,6 @@ import java.util.NoSuchElementException;
 
 public class SmallestAreaFinder {
 
-    static private int numberOfTests; //number of tests in the test file
     static private StreamTokenizer in;
 
     /**
@@ -40,7 +39,7 @@ public class SmallestAreaFinder {
          */
         in = new StreamTokenizer(new BufferedReader(new InputStreamReader(input)));
 
-        numberOfTests = nextInt();
+        int numberOfTests = nextInt();
 
         for (int i = 0; i < numberOfTests; i++) {
             int minAreaSize = -1;
@@ -88,11 +87,10 @@ public class SmallestAreaFinder {
     }
 
     public static void main(String[] args) {
-        int numberOfTests, numberOfWords;
         String fileName;
 
         if (args.length > 0) {
-            fileName = (args[0]).toString();
+            fileName = args[0];
 
             try {
                 findSmallestArea(fileName);
