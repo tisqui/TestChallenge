@@ -66,7 +66,6 @@ public class SmallestAreaFinder {
                 */
                         int nextId = nextInt(); //do not store all the input data in array to save space; read one by one
                         int nextPos = nextInt();
-                        System.out.println("# " + nextId + " " + nextPos);
                         wordsArea.addWord(nextId, nextPos);
                         end++;
                     }
